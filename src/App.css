@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+/* 
+.mb {
+  margin-bottom: 10px;
+}
+
+.mt {
+  margin-top: 10px;
+}
+
+.ml {
+  margin-left: 10px;
+}
+
+.mr {
+  margin-right: 10px;
+} */
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin: 0;
+}

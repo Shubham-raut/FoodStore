@@ -1,0 +1,54 @@
+.header {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 99999;
+    // top: 0px;
+    // left: 0px;
+    width: 100%;
+    // background-color: rgb(255, 255, 255);
+    // box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 2px;
+    // transition: all 0.3s ease 0s;
+    box-sizing: border-box;
+
+    .title {
+        color: #ef8c33;
+        font-size: 30px;
+        font-weight: 600;
+        // font-family: "URW Chancery L", cursive;
+    }
+
+    .headerMid {
+        display: none;
+    }
+
+    .headerBtns {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .headerLink {
+            font-size: 20px;
+            font-weight: s00;
+            &:hover {
+                color: #ef8c33;
+            }
+        }
+        button {
+            border: none;
+            width: 90px;
+            height: 40px;
+            color: white;
+            border-radius: 3px;
+            background-color: black;
+            padding: 0.5em 1em;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+}

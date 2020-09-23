@@ -1,0 +1,63 @@
+.header {
+  padding: 20px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header .title {
+  color: #ef8c33;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.header .headerMid {
+  display: none;
+}
+
+.header .headerBtns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.header .headerBtns .headerLink {
+  font-size: 20px;
+  font-weight: s00;
+}
+
+.header .headerBtns .headerLink:hover {
+  color: #ef8c33;
+}
+
+.header .headerBtns button {
+  border: none;
+  width: 90px;
+  height: 40px;
+  color: white;
+  border-radius: 3px;
+  background-color: black;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.header .headerBtns button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+/*# sourceMappingURL=Header.css.map */
