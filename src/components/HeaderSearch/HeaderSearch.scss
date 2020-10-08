@@ -1,0 +1,25 @@
+#headSearch {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 7px;
+    box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 8px;
+    border: 1px solid #e8e8e8;
+    padding: 0 15px;
+
+    #headCitySearch {
+    }
+
+    #headDishSearch {
+    }
+
+    .headDishInput,
+    .headCityInput {
+        font-size: 15px;
+        padding: 0 10px;
+        height: 43px;
+        color: rgb(119, 121, 140);
+        background-color: inherit;
+        border: 0px none;
+    }
+}
