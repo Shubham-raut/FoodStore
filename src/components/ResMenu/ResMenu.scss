@@ -1,0 +1,154 @@
+.dishContainer {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    gap: 1em;
+    background-color: #f4f4f4;
+}
+
+.dishContainer_inner {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dish_box {
+    display: flex;
+    width: 600px;
+    height: 120px;
+    gap: 1em;
+    padding: 1em;
+    border: 1px solid #e7e7e7;
+    background-color: white;
+    border-radius: 5px;
+
+    &:hover {
+        border: 1px solid #b7b7b7;
+    }
+}
+
+.dish_img_areaX {
+    display: grid;
+    background-color: #777;
+    align-content: center;
+    justify-content: center;
+    height: 120px;
+    width: 200px;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    img {
+        width: 200px;
+        height: 120px;
+    }
+}
+
+.dish_data {
+    padding: 1em;
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dish_nameX {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.dish_priceX {
+    font-size: 15px;
+    color: #333;
+}
+
+.dish_addToCartX {
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    font-weight: 500;
+    background-color: white;
+    color: green;
+    border: 1px solid #999;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 2px 2px 2px 2px #bbb;
+    }
+}
+
+// .cartContainerOuter {
+//     display: none;
+//     width: 90%;
+//     align-self: center;
+//     .showCartBtn {
+//         position: absolute;
+//         right: 20%;
+//         margin-top: 8px;
+//         height: 30px;
+//         width: 60px;
+//         color: white;
+//         border: none;
+//         border-radius: 3px;
+//         background-color: black;
+//         cursor: pointer;
+
+//         &:hover {
+//             box-shadow: 2px 2px 2px 2px #ccc;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 1300px) {
+//     .dish_box {
+//         width: 500px;
+//     }
+// }
+
+// @media only screen and (max-width: 1024px) {
+//     .dish_box {
+//         width: 390px;
+//     }
+//     .dishContainer {
+//         width: 60%;
+//     }
+// }
+
+// @media only screen and (max-width: 768px) {
+//     .XouterX {
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
+
+//     .dishContainer {
+//         width: 90%;
+//     }
+
+//     .normalCart {
+//         display: none;
+//     }
+
+//     .cartContainerOuter {
+//         display: flex;
+//     }
+// }
+
+// @media only screen and (max-width: 576px) {
+//     .dish_box {
+//         flex-direction: column;
+//         width: max-content;
+//         height: max-content;
+//         max-height: 320px;
+//     }
+//     .dish_data {
+//         width: 200px;
+//         box-sizing: border-box;
+//     }
+// }
