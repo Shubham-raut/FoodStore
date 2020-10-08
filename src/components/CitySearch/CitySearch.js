@@ -1,27 +1,46 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, withRouter } from "react-router-dom";
+import { getRes, setCity } from '../../redux/actions/actions';
+// import { locFilter } from '../../utils/func';
+// import { citySearch } from '../../utils/func';
 import './CitySearch.css';
 
-const CitySearch = () => {
+
+const CitySearch = (props) => {
+    const history = useHistory();
+    const city = useSelector(state => state.city);
+    // const cityId = useSelector(state => state.cityId);
+    // const resData = useSelector(state => state.resData);
+    const dispatch = useDispatch();
+
     const [cityDropDown, setCityDropDown] = useState(false);
 
-    const citySelectDropDown = () => {
+    const citySelectDropDown = (e) => {
         console.log('city selected');
+        dispatch(setCity(e.target.value));
+        dispatch(getRes(e.target.value));
+        history.push(`/Restaurants?city=${e.target.value}`);
     }
 
-    const cityChange = () => {
-        console.log('city change');
+    const cityClick = (e) => {
+        e.preventDefault();
+        dispatch(getRes(city));
+        history.push(`/Restaurants?city=${city}`);
     }
 
-    const cityClick = () => {
-        console.log('city click');
+    const cityEnter = (event) => {
+        if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
+            dispatch(getRes(city));
+            history.push(`/Restaurants?city=${city}`);
+        }
     }
 
     return (
-        <div id="citySearch">
+        <form id="citySearch" onSubmit={cityClick}>
 
             <div className="nearMeArea">
-                <button className="nearMe" onClick={() => setCityDropDown(!cityDropDown)}><i className="fa fa-map-marker"></i><span>Top Cities</span></button>
+                <div className="nearMe" onClick={() => setCityDropDown(!cityDropDown)}><i className="fa fa-map-marker"></i><span>Top Cities</span></div>
                 {
                     cityDropDown ?
                         (<div className="cityDropdown">
@@ -37,13 +56,18 @@ const CitySearch = () => {
                 }
             </div>
 
-            <input className="citySearch Input" type="text" placeholder="Search your city" onChange={cityChange} />
+            <input className="cityInput" type="text" placeholder="Search your city"
+                value={city}
+                onChange={(e) => dispatch(setCity(e.target.value))}
+                onKeyPress={cityEnter}
+            />
 
-            <button id="citySearchbtn" onClick={cityClick}>
-                <i className="fa fa-search"></i> Search
+
+            <button type="submit" id="citySearchbtn">
+                <i className="fa fa-search"></i><span>Search</span>
             </button>
-        </div>
+        </form>
     );
 }
 
-export default CitySearch;
+export default withRouter(CitySearch);
