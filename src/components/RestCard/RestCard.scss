@@ -1,0 +1,83 @@
+.mainPage_restaurent_inner_container {
+    display: grid;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #e7e7e7;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid #b7b7b7;
+    }
+}
+
+.mainPage_restaurent_card_container {
+    display: flex;
+    width: 250px;
+    height: 100%;
+    flex-direction: column;
+    font-size: 15px;
+    color: #333;
+}
+
+.res_img_area {
+    display: grid;
+    background-color: #777;
+    align-content: center;
+    justify-content: center;
+    height: 160px;
+    width: 250px;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    img {
+        width: 250px;
+        height: 160px;
+    }
+}
+.res_title {
+    overflow: hidden;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    padding: 0;
+    margin: 15px 0 10px;
+}
+.res_title,
+.res_cuisines,
+.res_loc,
+.res_timing {
+    margin-bottom: 10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rate-cost {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.res_rating_green,
+.res_rating_red {
+    width: 35px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+.res_rating_green {
+    background-color: #48c479;
+}
+.res_rating_red {
+    background-color: #db7c38;
+}
