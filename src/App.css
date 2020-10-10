@@ -1,25 +1,10 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-/* 
-.mb {
-  margin-bottom: 10px;
-}
-
-.mt {
-  margin-top: 10px;
-}
-
-.ml {
-  margin-left: 10px;
-}
-
-.mr {
-  margin-right: 10px;
-} */
 
 h1 {
   margin: 0;
+  text-align: center;
 }
 
 a {
@@ -29,4 +14,35 @@ a {
 
 p {
   margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.error,
+.notFound {
+  padding: 10px;
+  background: white;
+  font-size: 20px;
+  font-weight: 500;
+  color: #777;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error i {
+  color: #ff5555;
+  margin-right: 10px;
+}
+
+.notFound i {
+  color: #ff5555;
+  margin-right: 10px;
 }
