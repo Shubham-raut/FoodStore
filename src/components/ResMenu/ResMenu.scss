@@ -1,25 +1,24 @@
-.dishContainer {
-    display: flex;
-    width: 70%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
-    gap: 1em;
-    background-color: #f4f4f4;
-}
+// .dishContainer {
+//     display: flex;
+//     width: 70%;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding-top: 50px;
+//     gap: 1em;
+//     background-color: #f4f4f4;
+// }
 
-.dishContainer_inner {
-    display: flex;
-    width: 70%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+// .dishContainer_inner {
+//     display: flex;
+//     width: 70%;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
 .dish_box {
     display: flex;
     width: 600px;
-    height: 120px;
     gap: 1em;
     padding: 1em;
     border: 1px solid #e7e7e7;
@@ -33,12 +32,12 @@
 
 .dish_img_areaX {
     display: grid;
-    background-color: #777;
+    background-color: #eef0f5;
     align-content: center;
     justify-content: center;
     height: 120px;
     width: 200px;
-    border: 1px solid black;
+    border: 1px solid #b7b7b7;
     box-sizing: border-box;
 
     img {
@@ -81,6 +80,20 @@
     &:hover {
         box-shadow: 2px 2px 2px 2px #bbb;
     }
+}
+
+.dishtop_load {
+    height: 30px;
+    background-color: #eef0f5;
+    margin: 10px 0;
+    width: 60%;
+}
+
+.dishBot_load {
+    height: 20px;
+    background-color: #eef0f5;
+    margin: 10px 0;
+    width: 40%;
 }
 
 // .cartContainerOuter {

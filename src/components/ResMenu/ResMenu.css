@@ -1,46 +1,8 @@
-.dishContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 70%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 50px;
-  gap: 1em;
-  background-color: #f4f4f4;
-}
-
-.dishContainer_inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 70%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .dish_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 600px;
-  height: 120px;
   gap: 1em;
   padding: 1em;
   border: 1px solid #e7e7e7;
@@ -55,7 +17,7 @@
 .dish_img_areaX {
   display: -ms-grid;
   display: grid;
-  background-color: #777;
+  background-color: #eef0f5;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
@@ -63,7 +25,7 @@
           justify-content: center;
   height: 120px;
   width: 200px;
-  border: 1px solid black;
+  border: 1px solid #b7b7b7;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -117,5 +79,19 @@
 .dish_addToCartX:hover {
   -webkit-box-shadow: 2px 2px 2px 2px #bbb;
           box-shadow: 2px 2px 2px 2px #bbb;
+}
+
+.dishtop_load {
+  height: 30px;
+  background-color: #eef0f5;
+  margin: 10px 0;
+  width: 60%;
+}
+
+.dishBot_load {
+  height: 20px;
+  background-color: #eef0f5;
+  margin: 10px 0;
+  width: 40%;
 }
 /*# sourceMappingURL=ResMenu.css.map */
