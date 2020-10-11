@@ -87,4 +87,16 @@
   font-size: 12px;
   color: #c7c7c7;
 }
+
+.width {
+  max-width: 270px;
+}
+
+.margin {
+  margin-top: 0;
+}
+
+.resDetails_right_container_load {
+  width: 100%;
+}
 /*# sourceMappingURL=ResHead.css.map */
