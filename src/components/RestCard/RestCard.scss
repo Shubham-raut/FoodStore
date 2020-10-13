@@ -1,7 +1,12 @@
+// .restCard {
+//     width: 100%;
+//     box-sizing: border-box;
+// }
+
 .mainPage_restaurent_inner_container {
-    display: grid;
-    width: 250px;
-    height: 400px;
+    display: flex;
+    width: 100%;
+    height: 450px;
     padding: 20px;
     background-color: white;
     border-radius: 3px;
@@ -11,6 +16,7 @@
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
+    box-sizing: border-box;
 
     &:hover {
         border: 1px solid #b7b7b7;
@@ -19,7 +25,7 @@
 
 .mainPage_restaurent_card_container {
     display: flex;
-    width: 250px;
+    width: 100%;
     height: 100%;
     flex-direction: column;
     font-size: 15px;
@@ -27,20 +33,25 @@
 }
 
 .res_img_area {
-    display: grid;
-    background-color: #777;
-    align-content: center;
-    justify-content: center;
+    background-color: #eef0f5;
     height: 160px;
-    width: 250px;
-    border: 1px solid black;
-    box-sizing: border-box;
+    width: 100%;
+    // height: 230px;
+    padding: 0px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
     img {
-        width: 250px;
-        height: 160px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
+
 .res_title {
     overflow: hidden;
     font-size: 20px;
@@ -80,4 +91,40 @@
 }
 .res_rating_red {
     background-color: #db7c38;
+}
+
+.resimgarea_load {
+    background-color: #eef0f5;
+    height: 160px;
+    width: 100%;
+    padding: 0px;
+    flex-shrink: 0;
+}
+
+.restitle_load {
+    height: 30px;
+    background-color: #eef0f5;
+    margin: 25px 0;
+    width: 80%;
+}
+
+.restop_load {
+    height: 20px;
+    background-color: #eef0f5;
+    margin: 10px 0;
+    width: 65%;
+}
+
+.resmid_load {
+    height: 20px;
+    background-color: #eef0f5;
+    margin: 10px 0;
+    width: 45%;
+}
+
+.resBot_load {
+    height: 20px;
+    background-color: #eef0f5;
+    margin: 30px 0;
+    width: 80%;
 }
