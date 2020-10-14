@@ -1,0 +1,37 @@
+#filters {
+    width: 280px;
+    background-color: white;
+    position: sticky;
+    top: 85px;
+    max-height: calc(-85px + 100vh);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+}
+
+.sortFilterTitle,
+.cuisineFilterTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(13, 17, 54);
+}
+
+.sortFilterList,
+.cuisineFilterList {
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.filterItem {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0d1136;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.active {
+    color: #ef8c33;
+}

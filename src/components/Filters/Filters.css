@@ -1,0 +1,44 @@
+#filters {
+  width: 280px;
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 85px;
+  max-height: calc(-85px + 100vh);
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+}
+
+.sortFilterTitle,
+.cuisineFilterTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d1136;
+}
+
+.sortFilterList,
+.cuisineFilterList {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+.filterItem {
+  font-size: 15px;
+  font-weight: 500;
+  color: #0d1136;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.active {
+  color: #ef8c33;
+}
+/*# sourceMappingURL=Filters.css.map */
