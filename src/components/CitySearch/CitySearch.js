@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, withRouter } from "react-router-dom";
-import { getRes, setCity } from '../../redux/actions/actions';
-// import { locFilter } from '../../utils/func';
-// import { citySearch } from '../../utils/func';
+import { getRes, setCity } from '../../redux';
 import './CitySearch.css';
 
 
 const CitySearch = (props) => {
     const history = useHistory();
-    const city = useSelector(state => state.city);
-    // const cityId = useSelector(state => state.cityId);
-    // const resData = useSelector(state => state.resData);
+    const city = useSelector(state => state.cityState.city);
     const dispatch = useDispatch();
 
     const [cityDropDown, setCityDropDown] = useState(false);
