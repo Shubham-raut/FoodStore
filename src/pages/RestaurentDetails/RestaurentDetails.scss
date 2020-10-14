@@ -1,3 +1,30 @@
-#clickedRestaurent {
+#currentRestaurent {
     padding-top: 100px;
 }
+
+.resElements {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px 40px;
+    background-color: #f2f2f2;
+}
+
+.dishContainer {
+    width: 100%;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    border-radius: 3px;
+}
+
+// .dishContainer_inner {
+//     display: flex;
+//     width: 70%;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
