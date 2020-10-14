@@ -2,11 +2,16 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import './HeaderSearch.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCity, setDish, getRes } from '../../redux/actions/actions';
+import { setCity, getRes, setQVal, sortFilter, setCuisine } from '../../redux';
 
 const HeaderSearch = () => {
-    const dish = useSelector(state => state.dish);
-    const city = useSelector(state => state.city);
+    const city = useSelector(state => state.cityState.city);
+    const QVal = useSelector(state => state.cityState.QVal);
+
+    const cityId = useSelector(state => state.cityState.cityId);
+    const sort = useSelector(state => state.cityState.sort);
+    const order = useSelector(state => state.cityState.order);
+    const cuisineId = useSelector(state => state.cityState.cuisineId);
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -15,23 +20,42 @@ const HeaderSearch = () => {
     }
 
     const dishSearch = (event) => {
-        dispatch(setDish(event.target.value))
+        dispatch(setQVal(event.target.value))
     }
 
     const cityEnter = (event) => {
         if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-            dispatch(getRes(city));
+            dispatch(setQVal(''));
+            if (city) {
+                dispatch(getRes(city));
+            }
+            else {
+                alert("Please enter city name");
+            }
             history.push(`/Restaurants?city=${city}`);
         }
     }
 
     const dishEnter = (event) => {
         if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-            console.log('dish enter');
-            // dispatch(getRes(city));
-            // history.push(`/Restaurants?city=${city}`);
+
+            if (city) {
+                if (QVal) {
+                    dispatch(setCuisine(''));
+                    dispatch(sortFilter(sort, order, cuisineId, cityId, QVal));
+                    let current = document.querySelectorAll(`.cuisineFilterList option.active`);
+                    if (current.length > 0) {
+                        current[0].className = current[0].className.replace(" active", "");
+                    }
+                    history.push(`/Restaurants?city=${city}`);
+                }
+            }
+            else {
+                alert("Please search for city first");
+            }
         }
     }
+
 
     return (
 
@@ -47,11 +71,11 @@ const HeaderSearch = () => {
             <span>|</span>
             <div id="headDishSearch">
                 <input className="headDishInput" type="text" placeholder="Search for dish"
-                    value={dish}
-                    onChange={dishSearch}
+                    value={QVal}
+                    onChange={(e) => dishSearch(e)}
                     onKeyPress={dishEnter}
                 />
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <i className="fa fa-search" aria-hidden="true"></i>
             </div>
 
         </div>

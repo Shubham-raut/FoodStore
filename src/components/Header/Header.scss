@@ -1,16 +1,16 @@
 .header {
-    padding: 20px 50px;
+    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    z-index: 99999;
-    // top: 0px;
-    // left: 0px;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    // background-color: rgb(255, 255, 255);
-    // box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 2px;
-    // transition: all 0.3s ease 0s;
+    position: fixed;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
+    transition: all 0.3s ease 0s;
     box-sizing: border-box;
 
     .title {
@@ -21,6 +21,9 @@
     }
 
     .headerMid {
+        display: flex;
+    }
+    .hidden {
         display: none;
     }
 
@@ -30,25 +33,89 @@
         gap: 10px;
 
         .headerLink {
-            font-size: 20px;
-            font-weight: s00;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px;
             &:hover {
                 color: #ef8c33;
             }
         }
-        button {
+        .signin {
             border: none;
-            width: 90px;
-            height: 40px;
             color: white;
             border-radius: 3px;
             background-color: black;
-            padding: 0.5em 1em;
+            padding: 0.7em;
+            font-weight: 500;
             cursor: pointer;
 
             &:hover {
-                transform: scale(1.03);
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        .user {
+            border-radius: 20px;
+            height: 35px;
+            border: 1px solid #ff4b2b;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 5px 10px;
+            max-width: 114px;
+            width: 50px;
+            font-size: large;
+            cursor: pointer;
+            &:hover {
+                background-color: wheat;
             }
         }
     }
+}
+
+.myAccount {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    right: 30px;
+    left: auto;
+    position: absolute;
+    top: 70%;
+    z-index: 100;
+    background-color: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    margin: 8px 0;
+    padding: 4px 0;
+
+    .userName {
+        padding: 4px 8px 14px;
+        border-bottom: 1px solid #e1e4e8;
+        text-align: center;
+        margin: 5px;
+    }
+
+    .myAccountBtn,
+    .signoutbtn {
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        display: block;
+        padding: 4px 8px;
+        overflow: hidden;
+        color: #24292e;
+        text-overflow: ellipsis;
+        text-align: center;
+        &:hover {
+            background-color: #ef8c33;
+        }
+    }
+}
+
+.home {
+    position: absolute;
+    background-color: transparent;
+    box-shadow: none;
+    animation: 0.3s ease 0s 1 normal none running daNCtO;
 }
