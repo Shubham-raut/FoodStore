@@ -1,62 +1,36 @@
-// background:white
-// component-background:#f7f7f7
-// light-border:#f1f1f1
-
-// green-#009E7F
-// orange:#F0801C
-
-// txt:black
-// un-imp-txt:#77798C
-
 #main {
+    margin-top: 85px;
+    display: flex;
     width: 100%;
-
-    #mainCover {
-        font-size: 19px;
-        display: flex;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-
-        .coverImg {
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            background-position: center center;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-image: url("../../assets/imgs/restaurant-cover.png");
-        }
-
-        .coverContent {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-
-            .coverTitle {
-                font-family: Poppins, sans-serif;
-                font-size: 45px;
-                font-weight: 700;
-                margin-bottom: 25px;
-            }
-            .coverDesc {
-                margin-bottom: 60px;
-            }
-        }
-    }
-
-    #mid {
-        height: 200px;
-        background-color: blue;
-        width: 100%;
-    }
+    min-height: calc(100vh - 85px);
+    box-sizing: border-box;
 }
+
+.mainPage_card_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+    width: calc(100% - 280px);
+    padding: 30px 30px 50px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+// .error {
+//     padding: 10px;
+//     background: white;
+//     font-size: 20px;
+//     font-weight: 500;
+//     color: #777;
+//     grid-column: 1 / 4;
+//     height: max-content;
+//     border-radius: 5px;
+
+//     i {
+//         color: #ff5555;
+//         margin-right: 10px;
+//     }
+// }
