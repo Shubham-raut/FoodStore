@@ -8,7 +8,6 @@
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
-  min-height: 480px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -65,11 +64,12 @@
 #landing #landingCover .coverContent .coverDesc {
   margin-bottom: 60px;
   color: #77798c;
+  text-align: center;
 }
 
-#landing #mid {
-  height: 200px;
-  background-color: blue;
-  width: 100%;
+@media only screen and (max-width: 769px) {
+  #landing #landingCover .coverContent .coverTitle {
+    font-size: 26px;
+  }
 }
 /*# sourceMappingURL=LandingPage.css.map */

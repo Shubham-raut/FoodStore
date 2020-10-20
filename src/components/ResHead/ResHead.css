@@ -60,6 +60,10 @@
   -webkit-box-orient: vertical;
 }
 
+.res_timingX {
+  -webkit-line-clamp: 2;
+}
+
 .res_cuisinesX,
 .res_locationX,
 .res_timingX {
@@ -98,5 +102,19 @@
 
 .resDetails_right_container_load {
   width: 100%;
+}
+
+@media only screen and (max-width: 990px) {
+  .resDetails_inner_container {
+    width: 90%;
+    gap: 2em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .dish_img_area,
+  .resimgarea_load {
+    display: none;
+  }
 }
 /*# sourceMappingURL=ResHead.css.map */

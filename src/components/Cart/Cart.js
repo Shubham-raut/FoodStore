@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { decreamentHandler, getCartData, increamentHandler } from '../../redux';
 import './Cart.css';
 
-const Cart = () => {
+const Cart = (props) => {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.authState.isAuthenticated);
     const cart = useSelector(state => state.cartState.cart);
@@ -81,11 +81,12 @@ const Cart = () => {
     }
 
     return (
-        <div className="cartConatiner">
+        <div className={"cartConatiner" + (props.abs ? ' abs' : '')}>
+            {props.abs ? <button onClick={props.closeCart} className='closeCartBtn'>X</button> : null}
 
             <div className='cartHead'>
                 <div className="cart_totalItem"><i style={{ marginRight: '12px' }} className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    {totalItem} Items</div>
+                    {totalItem} Item</div>
             </div>
 
             <div className="cart_Items">{cartItems}</div>
@@ -103,6 +104,44 @@ const Cart = () => {
 
         </div>
     );
+}
+
+export const CartBtn = () => {
+    const isAuthenticated = useSelector(state => state.authState.isAuthenticated);
+    const cart = useSelector(state => state.cartState.cart);
+
+    const [showCart, setShowCart] = useState(false);
+
+    let totalItem = 0;
+    let totalPrice = 0;
+
+    if (isAuthenticated && cart.length) {
+        for (let i in cart) {
+            totalPrice += parseInt(cart[i].price) * parseInt(cart[i].quantity);
+            totalItem += parseInt(cart[i].quantity);
+        }
+    }
+
+    const closeCart = () => {
+        setShowCart(!showCart);
+    }
+
+    return (
+        <>
+            <div className='CartBtn' onClick={() => setShowCart(!showCart)}>
+                <i style={{ marginRight: '7px' }} className="fa fa-shopping-cart" aria-hidden="true"></i>
+                {totalItem}
+                <span style={{ margin: '0 4px' }}> Item</span>
+                <span className="total_price"><i style={{ marginRight: '2px' }} className="fa fa-inr" aria-hidden="true"></i>{totalPrice}</span>
+            </div>
+
+            {showCart ?
+                <Cart abs={true} closeCart={closeCart} /> :
+                null
+            }
+
+        </>
+    )
 }
 
 export default Cart;

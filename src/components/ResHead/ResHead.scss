@@ -47,6 +47,9 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
+.res_timingX {
+    -webkit-line-clamp: 2;
+}
 
 .res_cuisinesX,
 .res_locationX,
@@ -84,15 +87,16 @@
     width: 100%;
 }
 
-//   @media only screen and (max-width: 1024px) {
-//     .resDetails_inner_container {
-//       width: 85%;
-//       gap: 2em;
-//     }
-//   }
+@media only screen and (max-width: 990px) {
+    .resDetails_inner_container {
+        width: 90%;
+        gap: 2em;
+    }
+}
 
-//   @media only screen and (max-width: 768px) {
-//     .dish_img_area {
-//       display: none;
-//     }
-//   }
+@media only screen and (max-width: 768px) {
+    .dish_img_area,
+    .resimgarea_load {
+        display: none;
+    }
+}

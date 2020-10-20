@@ -1,19 +1,8 @@
 import React from 'react';
 import CitySearch from '../../components/CitySearch/CitySearch';
-// import DishSearch from '../../components/DishSearch/DishSearch';
-import Footer from '../../components/Footer/Footer';
 import './LandingPage.css';
-// import Header from '../../components/Header/Header';
 
 const LandingPage = () => {
-
-    // useEffect(() => {
-    //     const headerMid = document.getElementsByClassName("headerMid");
-    //     if (headerMid.length) {
-    //         headerMid[0].style.display = 'none';
-    //         console.log(true);
-    //     }
-    // }, [])
 
     return (
         <div id="landing">
@@ -25,16 +14,8 @@ const LandingPage = () => {
                     <CitySearch />
                 </div>
             </div>
-
-            {/* <section id="mid">
-                Mid Section
-            </section>
-
-            <Footer /> */}
         </div>
     );
 }
-
-
 
 export default LandingPage;

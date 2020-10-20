@@ -15,7 +15,7 @@
         font-size: 19px;
         display: flex;
         height: 100vh;
-        min-height: 480px;
+        // min-height: 480px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -53,13 +53,20 @@
             .coverDesc {
                 margin-bottom: 60px;
                 color: rgb(119, 121, 140);
+                text-align: center;
             }
         }
     }
+}
 
-    #mid {
-        height: 200px;
-        background-color: blue;
-        width: 100%;
+@media only screen and (max-width: 769px) {
+    #landing {
+        #landingCover {
+            .coverContent {
+                .coverTitle {
+                    font-size: 26px;
+                }
+            }
+        }
     }
 }

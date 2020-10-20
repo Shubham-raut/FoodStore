@@ -22,4 +22,22 @@
   background-color: inherit;
   border: 0px none;
 }
+
+@media only screen and (max-width: 1201px) {
+  .headDishInput,
+  .headCityInput {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  #headCitySearch,
+  #headDishSearch {
+    width: 100%;
+  }
+  .headDishInput,
+  .headCityInput {
+    width: calc(100% - 16px);
+  }
+}
 /*# sourceMappingURL=HeaderSearch.css.map */

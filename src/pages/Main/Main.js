@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Main.css";
 import { useSelector, useDispatch } from 'react-redux';
 import Filters from '../../components/Filters/Filters';
 import RestCard, { RestCardLoad } from '../../components/RestCard/RestCard';
 
 const Main = () => {
-
+    const [filterShow, setFilterShow] = useState(false);
     // const dispatch = useDispatch();
     const resData = useSelector(state => state.cityState.resData);
     const loading = useSelector(state => state.cityState.loading);
@@ -13,8 +13,9 @@ const Main = () => {
 
     return (
         <div id="main">
+            <div className="filterCollapse"><button onClick={() => setFilterShow(!filterShow)} className="filterCollapseBtn">☰ Filters</button></div>
 
-            <Filters />
+            <Filters class={filterShow ? ' ftr' : ''} />
 
             <div className="mainPage_card_container">
                 {loading ?

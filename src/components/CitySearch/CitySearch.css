@@ -113,4 +113,33 @@
 .cityDropdownItem:hover {
   color: #ef8c33;
 }
+
+@media only screen and (max-width: 769px) {
+  .nearMeArea {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .cityInput {
+    width: 80%;
+  }
+  #citySearchbtn span {
+    display: none;
+  }
+  #citySearch {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 80%;
+  }
+  #citySearchbtn {
+    padding: 0;
+    width: 20%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+  }
+}
 /*# sourceMappingURL=CitySearch.css.map */

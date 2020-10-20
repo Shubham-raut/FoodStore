@@ -3,7 +3,7 @@ import "./Filters.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { setCuisine, setQVal, setSort, sortFilter } from '../../redux';
 
-const Filters = () => {
+const Filters = (props) => {
     const cityId = useSelector(state => state.cityState.cityId);
     const sort = useSelector(state => state.cityState.sort);
     const order = useSelector(state => state.cityState.order);
@@ -40,7 +40,7 @@ const Filters = () => {
     }
 
     return (
-        <div id="filters">
+        <div className={"filters" + (props.class)} >
             <div className="sortFilter">
                 <div className="sortFilterTitle">Sort by</div>
                 <div className="sortFilterList">

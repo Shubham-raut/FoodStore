@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import "./RestaurentDetails.css";
 import Reshead, { ResheadLoad } from '../../components/ResHead/ResHead';
 import ResMenu, { ResMenuLoad } from '../../components/ResMenu/ResMenu';
-import Cart from '../../components/Cart/Cart';
+import Cart, { CartBtn } from '../../components/Cart/Cart';
 
 const RestaurentDetails = () => {
     const currentRes = useSelector(state => state.restaurentState.currentRes);
@@ -51,6 +51,7 @@ const RestaurentDetails = () => {
                     }
                 </div>
                 <Cart />
+                <CartBtn />
             </div>
 
         </div>

@@ -27,6 +27,15 @@
   color: #ef8c33;
   font-size: 30px;
   font-weight: 600;
+  height: 40px;
+  width: 170px;
+}
+
+.header .title img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header .headerMid {
@@ -47,6 +56,10 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+}
+
+.header .headerBtns a {
+  text-decoration: none;
 }
 
 .header .headerBtns .headerLink {
@@ -146,5 +159,78 @@
           box-shadow: none;
   -webkit-animation: 0.3s ease 0s 1 normal none running daNCtO;
           animation: 0.3s ease 0s 1 normal none running daNCtO;
+}
+
+.headerDropdown {
+  position: absolute;
+  top: 70px;
+  background-color: white;
+  border-radius: 5px;
+  left: 0;
+  width: 200px;
+  padding: 20px;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.headerDropdownbtn {
+  display: none;
+  width: 50px;
+  text-align: center;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #ef8c33;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.headerDropdownbtn:hover {
+  -webkit-box-shadow: 2px 2px 2px 2px #bbb;
+          box-shadow: 2px 2px 2px 2px #bbb;
+}
+
+.margBpt {
+  border-bottom: 1px solid #e1e4e8;
+}
+
+@media only screen and (max-width: 991px) {
+  .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .header .title {
+    margin: auto auto auto 60px;
+  }
+  .header .headerDropdownbtn {
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 25px;
+  }
+  .header .lg {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header .title {
+    margin: auto auto 10px;
+  }
 }
 /*# sourceMappingURL=Header.css.map */

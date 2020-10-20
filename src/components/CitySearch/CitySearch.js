@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, withRouter } from "react-router-dom";
 import { getRes, setCity } from '../../redux';
+import { useClickOutside } from '../../utils/func';
 import './CitySearch.css';
 
 
@@ -32,10 +33,14 @@ const CitySearch = (props) => {
         }
     }
 
+    const nearMe = useClickOutside(() => {
+        setCityDropDown(false);
+    })
+
     return (
         <form id="citySearch" onSubmit={cityClick}>
 
-            <div className="nearMeArea">
+            <div ref={nearMe} className="nearMeArea">
                 <div className="nearMe" onClick={() => setCityDropDown(!cityDropDown)}><i className="fa fa-map-marker"></i><span>Top Cities</span></div>
                 {
                     cityDropDown ?

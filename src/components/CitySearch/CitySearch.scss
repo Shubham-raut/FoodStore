@@ -94,3 +94,33 @@
         color: #ef8c33;
     }
 }
+
+@media only screen and (max-width: 769px) {
+    .nearMeArea {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .cityInput {
+        width: 80%;
+    }
+
+    #citySearchbtn {
+        span {
+            display: none;
+        }
+    }
+
+    #citySearch {
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    #citySearchbtn {
+        padding: 0;
+        width: 20%;
+        justify-content: center;
+        text-align: center;
+    }
+}

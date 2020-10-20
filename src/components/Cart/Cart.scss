@@ -165,14 +165,65 @@
     margin-right: 2px;
 }
 
-// @media only screen and (max-width: 1024px) {
-//     .cartConatiner {
-//         width: 300px;
-//     }
-// }
+.CartBtn {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    height: 48px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ef8c33;
+    padding: 0 0 0 20px;
+    border-radius: 48px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+    border: 0px none;
+    outline: currentcolor none 0px;
+    cursor: pointer;
 
-// @media only screen and (max-width: 576px) {
-//     .cartConatiner {
-//         width: 250px;
-//     }
-// }
+    &:hover {
+        box-shadow: 2px 2px 2px 2px #bbb;
+    }
+
+    .total_price {
+        font-size: inherit;
+        padding: 0px 10px;
+        min-width: 44px;
+    }
+}
+
+.abs {
+    position: fixed;
+    left: calc(50% - 150px);
+    width: 300px;
+    display: none;
+    .closeCartBtn {
+        position: absolute;
+        border: 0;
+        background: transparent;
+        top: 2%;
+        right: 2%;
+        cursor: pointer;
+        &:hover {
+            color: #ef8c33;
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .cartConatiner {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .cartConatiner {
+        display: none;
+    }
+    .abs,
+    .CartBtn {
+        display: flex;
+    }
+}
