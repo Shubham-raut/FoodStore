@@ -1,34 +1,16 @@
-// import axios from 'axios';
+import { useEffect, useRef } from 'react';
 
-
-// export const axiosCallFunc = (url) => {
-//     return axios.get(url, {
-//         headers: {
-//             "user-key": "7a77149c434216ebc2ae733a22ab3839",
-//         },
-//     })
-// }
-
-
-
-export const locFilter = (data) => {
-    let dataStoreRest = [];
-
-    const localitySetObj = (key, value) => {
-        if (!(key in dataStoreRest)) {
-            dataStoreRest[key] = [value];
+export const useClickOutside = (handlor) => {
+    const domNode = useRef();
+    useEffect(() => {
+        const mayBeHandlor = (event) => {
+            if (!!domNode.current && !domNode.current.contains(event.target)) {
+                handlor();
+            }
         }
-        else {
-            dataStoreRest[key] = [...dataStoreRest[key], value];
-        }
-    }
+        document.addEventListener('mousedown', mayBeHandlor)
+        return () => document.removeEventListener('mousedown', mayBeHandlor);
+    })
 
-    data.forEach(a => {
-        let loc = (a.restaurant.location.locality).split(', ');
-        for (let i of loc) {
-            localitySetObj(i, a);
-        }
-    });
-
-    return dataStoreRest;
+    return domNode;
 }
