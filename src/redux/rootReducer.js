@@ -5,6 +5,7 @@ import restaurentReducer from './restaurent/restaurentReducer';
 import authReducer from './auth/authReducer';
 import cityReducer from './city/cityReducer';
 import cartReducer from './cart/cartReducer';
+import commonReducer from './common/commonReducer';
 
 
 // const persistConfig = {
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     authState: authReducer,
     cityState: cityReducer,
     restaurentState: restaurentReducer,
-    cartState: cartReducer
+    cartState: cartReducer,
+    commonState: commonReducer
 })
 
 export default rootReducer;

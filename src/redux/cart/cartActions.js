@@ -128,7 +128,7 @@ export const increamentHandler = (value) => dispatch => {
 export const decreamentHandler = (value) => dispatch => {
     dispatch(requestDecrementCart());
     try {
-        if (value.quantity >= 1) {
+        if (value.quantity > 1) {
             myFirebase
                 .database()
                 .ref(store.getState().authState.user.uid)
@@ -138,7 +138,7 @@ export const decreamentHandler = (value) => dispatch => {
                 })
                 .then(() => dispatch(decrementCartSuccess()))
         }
-        if (value.quantity === 0) {
+        else {
             myFirebase
                 .database()
                 .ref(store.getState().authState.user.uid)
