@@ -1,6 +1,5 @@
 import { myFirebase } from "../../config/firebase/firebase";
 import firebase from 'firebase';
-// import store from '../store';
 
 import {
     LOGIN_REQUEST,
@@ -16,7 +15,6 @@ import {
     VERIFY_SUCCESS
 } from "./authConstants";
 import { clearCart } from "../";
-
 
 const requestLogin = () => {
     return {
@@ -65,9 +63,10 @@ const requestSignup = () => {
     };
 };
 
-const receiveSignup = () => {
+const receiveSignup = (user) => {
     return {
-        type: SIGNUP_SUCCESS
+        type: SIGNUP_SUCCESS,
+        user
     };
 };
 
@@ -107,7 +106,6 @@ export const loginUser = (email, password) => dispatch => {
 
 export const googleLoginUser = () => dispatch => {
     dispatch(requestLogin());
-    // const base_provider = new firebase.auth.GoogleAuthProvider();
     myFirebase
         .auth()
         .signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -139,9 +137,7 @@ export const signupUser = (name, email, password) => dispatch => {
         .createUserWithEmailAndPassword(email, password)
         .then(u => {
             u.user.updateProfile({ displayName: name })
-                .then(() => dispatch(receiveSignup()))
-                .then(() => verifyAuth())
-            // items: store.getState().otherReducer.items,
+                .then(() => dispatch(receiveSignup(u.user)))
         })
 
         .catch((error) => {
@@ -160,4 +156,5 @@ export const verifyAuth = () => dispatch => {
             }
             dispatch(verifySuccess());
         });
+
 };

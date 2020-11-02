@@ -12,6 +12,3 @@ export const SIGNUP_FAILURE = "SIGNUP_FAILURE";
 
 export const VERIFY_REQUEST = "VERIFY_REQUEST";
 export const VERIFY_SUCCESS = "VERIFY_SUCCESS";
-
-
-// export const LOGIN_POPUP = "LOGIN_POPUP";

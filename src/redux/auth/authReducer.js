@@ -56,7 +56,8 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 isLoggingOut: false,
                 isAuthenticated: false,
-                user: {}
+                user: {},
+                displayName: ''
             };
         case LOGOUT_FAILURE:
             return {
@@ -74,12 +75,16 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isSigningUp: false,
+                isAuthenticated: true,
+                user: action.user,
+                displayName: action.user.displayName
             };
         case SIGNUP_FAILURE:
             return {
                 ...state,
                 isSigningUp: false,
-                signupError: action.error
+                signupError: action.error,
+                isAuthenticated: false,
             };
         case VERIFY_REQUEST:
             return {

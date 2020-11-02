@@ -1,5 +1,11 @@
 import { myFirebase } from "../../config/firebase/firebase";
-import { ADDCART_FAILURE, ADDCART_REQUEST, ADDCART_SUCCESS, INCREMENTCART_FAILURE, INCREMENTCART_REQUEST, INCREMENTCART_SUCCESS, DECREMENT_FAILURE, DECREMENT_REQUEST, DECREMENT_SUCCESS, GETCART_FAILURE, GETCART_REQUEST, GETCART_SUCCESS, CLEAR_CART } from "./cartConstants";
+import {
+    ADDCART_FAILURE, ADDCART_REQUEST, ADDCART_SUCCESS,
+    INCREMENTCART_FAILURE, INCREMENTCART_REQUEST, INCREMENTCART_SUCCESS,
+    DECREMENT_FAILURE, DECREMENT_REQUEST, DECREMENT_SUCCESS,
+    GETCART_FAILURE, GETCART_REQUEST, GETCART_SUCCESS,
+    CLEAR_CART, CHECKING_CART, NOT_CHECKING_CART
+} from "./cartConstants";
 import store from '../store';
 
 const requestAddCart = () => {
@@ -11,7 +17,6 @@ const requestAddCart = () => {
 const addCartSuccess = () => {
     return {
         type: ADDCART_SUCCESS,
-        // cartItem
     };
 };
 
@@ -31,7 +36,6 @@ const requestIncrementCart = () => {
 const incrementCartSuccess = () => {
     return {
         type: INCREMENTCART_SUCCESS,
-        // cartItem
     };
 };
 
@@ -51,7 +55,6 @@ const requestDecrementCart = () => {
 const decrementCartSuccess = () => {
     return {
         type: DECREMENT_SUCCESS,
-        // cartItem
     };
 };
 
@@ -86,6 +89,18 @@ const cartError = error => {
 export const clearCart = () => {
     return {
         type: CLEAR_CART
+    }
+}
+
+export const checking = () => {
+    return {
+        type: CHECKING_CART
+    }
+}
+
+export const notChecking = () => {
+    return {
+        type: NOT_CHECKING_CART
     }
 }
 
@@ -173,3 +188,13 @@ export const getCartData = () => dispatch => {
     }
 
 };
+
+export const clearCartData = () => dispatch => {
+
+    myFirebase
+        .database()
+        .ref(store.getState().authState.user.uid)
+        .remove()
+        .then(() => dispatch(clearCart()));
+
+} 

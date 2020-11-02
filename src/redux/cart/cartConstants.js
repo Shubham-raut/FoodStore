@@ -17,4 +17,7 @@ export const GETCART_FAILURE = "GETCART_FAILURE";
 
 export const CLEAR_CART = "CLEAR_CART";
 
+export const CHECKING_CART = "CHECKING_CART";
+export const NOT_CHECKING_CART = "NOT_CHECKING_CART";
+
 

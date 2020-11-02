@@ -10,7 +10,7 @@ import {
     DECREMENT_SUCCESS,
     GETCART_FAILURE,
     GETCART_REQUEST,
-    GETCART_SUCCESS, CLEAR_CART
+    GETCART_SUCCESS, CLEAR_CART, CHECKING_CART, NOT_CHECKING_CART
 } from "./cartConstants";
 
 
@@ -23,7 +23,8 @@ const initialState = {
     incrementError: false,
     decrementError: false,
     cartError: false,
-    cart: []
+    cart: [],
+    isChecking: false,
 }
 
 const cartReducer = (state = initialState, action) => {
@@ -123,6 +124,19 @@ const cartReducer = (state = initialState, action) => {
                 cartError: false,
                 cart: []
             };
+
+        case CHECKING_CART:
+            return {
+                ...state,
+                isChecking: true
+            };
+
+        case NOT_CHECKING_CART:
+            return {
+                ...state,
+                isChecking: false
+            };
+
 
         default:
             return state;
