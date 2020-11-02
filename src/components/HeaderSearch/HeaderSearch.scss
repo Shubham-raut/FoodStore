@@ -20,6 +20,9 @@
         color: rgb(119, 121, 140);
         background-color: inherit;
         border: 0px none;
+        &:focus {
+            outline: none;
+        }
     }
 }
 

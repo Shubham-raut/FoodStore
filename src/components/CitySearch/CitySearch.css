@@ -62,6 +62,7 @@
 
 .cityInput:focus {
   border: none;
+  outline: none;
 }
 
 #citySearchbtn {

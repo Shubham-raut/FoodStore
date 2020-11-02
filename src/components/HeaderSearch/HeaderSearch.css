@@ -23,6 +23,11 @@
   border: 0px none;
 }
 
+#headSearch .headDishInput:focus,
+#headSearch .headCityInput:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 1201px) {
   .headDishInput,
   .headCityInput {
