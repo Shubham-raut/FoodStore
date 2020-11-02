@@ -45,6 +45,10 @@
     padding: 0 10px;
     width: 350px;
     color: rgb(119, 121, 140);
+
+    &:focus {
+        border: none;
+    }
 }
 
 #citySearchbtn {

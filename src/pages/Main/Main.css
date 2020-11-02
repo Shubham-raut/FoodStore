@@ -19,7 +19,6 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
-  padding: 0;
   width: calc(100% - 280px);
   padding: 30px 30px 50px;
   background-color: #f2f2f2;
@@ -31,6 +30,7 @@
   position: fixed;
   left: 5px;
   margin-top: 10px;
+  z-index: 2;
 }
 
 .filterCollapseBtn {

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decreamentHandler, getCartData, increamentHandler } from '../../redux';
+import { useHistory } from 'react-router-dom';
+import { checking, decreamentHandler, getCartData, increamentHandler } from '../../redux';
+import { useClickOutside } from '../../utils/func';
 import './Cart.css';
 
 const Cart = (props) => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.authState.isAuthenticated);
     const cart = useSelector(state => state.cartState.cart);
-    console.log(isAuthenticated);
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -24,13 +26,16 @@ const Cart = (props) => {
     }
 
     const checkOutHandler = () => {
-        if (cart.length) {
-            alert('checkout');
+        if (isAuthenticated && cart.length) {
+            dispatch(checking());
+            history.push('/Checkout');
         }
-        else {
-            alert("please add items to cart");
-        }
+
     }
+
+    const cartRef = useClickOutside(() => {
+        props.abs && props.closeCart();
+    })
 
     let cartItems = null;
     let totalItem = 0;
@@ -39,7 +44,7 @@ const Cart = (props) => {
         cartItems = cart.map((value) => {
             return (
                 <div key={value.dish_id} className="cart_item_card">
-                    <div className="cart_item_edit_btns">
+                    <div className={"cart_item_edit_btns" + (props.payment ? ' hide' : '')}>
                         <button
                             className="decBtn"
                             onClick={() => {
@@ -62,11 +67,16 @@ const Cart = (props) => {
                         <div className="cart_item_name">{value.name}</div>
                         <div className="cart_item_price">{value.price}</div>
                     </div>
+
                     <div className="cart_item_card_right">
                         <div className="cart_item_card_right_bot">
                             <i className="fa fa-inr" aria-hidden="true"></i>{" "}
                             {parseInt(value.price) * parseInt(value.quantity)}
                         </div>
+                        {props.payment ?
+                            <div>{value.quantity}</div> :
+                            null
+                        }
                     </div>
                 </div>
             );
@@ -81,7 +91,7 @@ const Cart = (props) => {
     }
 
     return (
-        <div className={"cartConatiner" + (props.abs ? ' abs' : '')}>
+        <div ref={cartRef} className={"cartConatiner" + (props.abs ? ' abs' : '') + (props.payment ? ' payment' : '')}>
             {props.abs ? <button onClick={props.closeCart} className='closeCartBtn'>X</button> : null}
 
             <div className='cartHead'>
@@ -92,14 +102,21 @@ const Cart = (props) => {
             <div className="cart_Items">{cartItems}</div>
 
             <div className="cartBottom">
-                {cartItems ?
-                    <p>Let's grab the order</p> :
-                    <p>Your Cart is Currently empty</p>
+                {!isAuthenticated ?
+                    <p className={props.payment ? 'hide' : ''}>Sign in and use cart</p> :
+                    (cartItems) ?
+                        <p className={props.payment ? 'hide' : ''}>Let's grab the order</p> :
+                        <p className={props.payment ? 'hide' : ''}>Your cart is currently empty</p>
                 }
-                <button onClick={checkOutHandler} className="checkoutBtn">
-                    <span>Checkout</span >
-                    <span className="total_price"><i style={{ marginRight: '5px' }} className="fa fa-inr" aria-hidden="true"></i>{totalPrice}</span>
-                </button>
+
+                {props.payment ?
+                    <span className="total_price"><i style={{ marginRight: '5px' }} className="fa fa-inr" aria-hidden="true"></i>{totalPrice}</span> :
+                    <button disabled={!isAuthenticated || !cartItems} onClick={checkOutHandler} className={"checkoutBtn" + (!isAuthenticated || !cartItems ? ' dissable' : '')}>
+                        <span>Checkout</span >
+                        <span className="total_price"><i style={{ marginRight: '5px' }} className="fa fa-inr" aria-hidden="true"></i>{totalPrice}</span>
+                    </button>
+                }
+
             </div>
 
         </div>

@@ -77,11 +77,7 @@
 .cart_item_edit_btns {
     display: flex;
     border: 1px solid #aaa;
-    justify-content: center;
     box-sizing: border-box;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
     font-size: 15px;
     font-weight: 700;
     border-radius: 200px;
@@ -199,7 +195,8 @@
     position: fixed;
     left: calc(50% - 150px);
     width: 300px;
-    display: none;
+    // display: none;
+    z-index: 9999;
     .closeCartBtn {
         position: absolute;
         border: 0;
@@ -212,6 +209,25 @@
         }
     }
 }
+
+.hide {
+    display: none;
+}
+
+.payment {
+    display: flex;
+    width: 100%;
+    border: none;
+    position: inherit;
+    &:hover {
+        border: none;
+    }
+}
+
+.dissable {
+    cursor: not-allowed;
+}
+
 @media only screen and (max-width: 1200px) {
     .cartConatiner {
         width: 300px;

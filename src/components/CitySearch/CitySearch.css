@@ -60,6 +60,10 @@
   color: #77798c;
 }
 
+.cityInput:focus {
+  border: none;
+}
+
 #citySearchbtn {
   background-color: #ef8c33;
   color: white;

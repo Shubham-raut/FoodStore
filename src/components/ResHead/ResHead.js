@@ -45,7 +45,7 @@ export const ResheadLoad = () => {
     load.push(
         <div className="resDetails_container">
             <div className="resDetails_inner_container">
-                <div className="resimgarea_load width"></div>
+                <div className="resheadimgarea_load width"></div>
                 <div className="resDetails_right_container_load">
                     <div className="restitle_load margin"></div>
                     <div className="restop_load"></div>

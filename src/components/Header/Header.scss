@@ -33,7 +33,8 @@
         display: none;
     }
 
-    .headerBtns {
+    .headerBtns,
+    .headerBtnsSm {
         display: flex;
         align-items: center;
         gap: 10px;
@@ -50,34 +51,40 @@
             }
         }
         .signin {
-            border: none;
             color: white;
-            border-radius: 3px;
             background-color: black;
-            padding: 0.7em;
+            border-radius: 10px;
+            height: 35px;
+            border: 1px solid gray;
             font-weight: 500;
+            padding: 5px 10px;
+            font-size: large;
             cursor: pointer;
+            display: block;
 
             &:hover {
                 background-color: rgba(0, 0, 0, 0.7);
             }
         }
 
-        .user {
-            border-radius: 20px;
+        .user,
+        .cart {
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
             height: 35px;
-            border: 1px solid #ff4b2b;
-            text-transform: uppercase;
+            border: 1px solid gray;
             font-weight: 500;
             padding: 5px 10px;
-            max-width: 114px;
-            width: 50px;
             font-size: large;
             cursor: pointer;
             &:hover {
                 background-color: wheat;
             }
         }
+    }
+    .headerBtnsSm {
+        display: none;
     }
 }
 
@@ -160,16 +167,27 @@
     border-bottom: 1px solid #e1e4e8;
 }
 
-@media only screen and (max-width: 991px) {
+.headTop {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.userInner {
+    max-width: 90px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 990px) {
     .column {
         display: flex;
         flex-direction: column;
     }
     .header {
-        justify-content: space-around;
-        .title {
-            margin: auto auto auto 60px;
-        }
+        justify-content: space-between;
+        padding: 20px 10px;
+        gap: 1em;
+
         .headerDropdownbtn {
             display: block;
             position: absolute;
@@ -180,13 +198,30 @@
             display: none;
         }
     }
+    .cartInner,
+    .userInner {
+        display: none;
+    }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 768px) {
     .header {
         flex-direction: column;
-        .title {
-            margin: auto auto 10px;
+        padding: 20px 30px;
+        .headerBtnsSm {
+            display: flex;
         }
+        .headerBtns {
+            display: none;
+        }
+    }
+    .headTop {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .header {
+        padding: 20px 20px;
     }
 }

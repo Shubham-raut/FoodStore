@@ -14,24 +14,19 @@ const CitySearch = (props) => {
     const [cityDropDown, setCityDropDown] = useState(false);
 
     const citySelectDropDown = (e) => {
-        console.log('city selected');
+        localStorage.setItem("city", e.target.value)
         dispatch(setCity(e.target.value));
         dispatch(getRes(e.target.value));
-        history.push(`/Restaurants?city=${e.target.value}`);
+        history.push("/Restaurants");
     }
 
     const cityClick = (e) => {
         e.preventDefault();
+        localStorage.setItem("city", city)
         dispatch(getRes(city));
-        history.push(`/Restaurants?city=${city}`);
+        history.push("/Restaurants");
     }
 
-    const cityEnter = (event) => {
-        if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-            dispatch(getRes(city));
-            history.push(`/Restaurants?city=${city}`);
-        }
-    }
 
     const nearMe = useClickOutside(() => {
         setCityDropDown(false);
@@ -60,7 +55,6 @@ const CitySearch = (props) => {
             <input className="cityInput" type="text" placeholder="Search your city"
                 value={city}
                 onChange={(e) => dispatch(setCity(e.target.value))}
-                onKeyPress={cityEnter}
             />
 
 

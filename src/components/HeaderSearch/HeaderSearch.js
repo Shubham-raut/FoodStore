@@ -28,31 +28,20 @@ const HeaderSearch = () => {
             dispatch(setQVal(''));
             if (city) {
                 dispatch(getRes(city));
+                history.push("/Restaurants");
             }
-            else {
-                alert("Please enter city name");
-            }
-            history.push(`/Restaurants?city=${city}`);
         }
     }
 
     const dishEnter = (event) => {
-        if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-
-            if (city) {
-                if (QVal) {
-                    dispatch(setCuisine(''));
-                    dispatch(sortFilter(sort, order, cuisineId, cityId, QVal));
-                    let current = document.querySelectorAll(`.cuisineFilterList option.active`);
-                    if (current.length > 0) {
-                        current[0].className = current[0].className.replace(" active", "");
-                    }
-                    history.push(`/Restaurants?city=${city}`);
-                }
+        if ((event.which === 13 || event.keyCode === 13 || event.key === "Enter") && QVal) {
+            dispatch(setCuisine(''));
+            dispatch(sortFilter(sort, order, cuisineId, cityId, QVal));
+            let current = document.querySelectorAll(`.cuisineFilterList option.active`);
+            if (current.length > 0) {
+                current[0].className = current[0].className.replace(" active", "");
             }
-            else {
-                alert("Please search for city first");
-            }
+            history.push("/Restaurants");
         }
     }
 

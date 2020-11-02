@@ -8,17 +8,17 @@ const RestCard = (props) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const resClicked = (resName, resId) => {
-        console.log("restaurent cllicked");
+    const resClicked = (resId) => {
+        localStorage.setItem("resId", resId)
         dispatch(getCurrentRes(resId));
         dispatch(getResMenu());
-        history.push(`/Restaurants${resName}`);
+        history.push(`/restaurants/restaurant/${resId}`);
     }
 
     return (
         <div className="mainPage_restaurent_inner_container"
             key={props.items.restaurant.R.res_id}
-            onClick={() => resClicked(props.items.restaurant.name, props.items.restaurant.R.res_id)}>
+            onClick={() => resClicked(props.items.restaurant.R.res_id)}>
             <div className="mainPage_restaurent_card_container">
                 <div className="res_img_area">
                     <img src={props.items.restaurant.thumb} alt="Restaurant Img" />
