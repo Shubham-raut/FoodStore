@@ -327,6 +327,7 @@
   .cartConatiner {
     display: none;
   }
+  .payment,
   .abs,
   .CartBtn {
     display: -webkit-box;
