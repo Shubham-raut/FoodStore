@@ -1,0 +1,27 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+
+    img {
+        max-width: 447px;
+        width: 100%;
+    }
+
+    a {
+        margin-top: 35px;
+        border-radius: 10px;
+        height: 35px;
+        border: 1px solid gray;
+        font-weight: 500;
+        padding: 5px 10px;
+        font-size: large;
+        cursor: pointer;
+        &:hover {
+            background-color: #ef8c33;
+        }
+    }
+}
