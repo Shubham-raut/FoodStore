@@ -40,7 +40,7 @@ const Filters = (props) => {
     }
 
     return (
-        <div className={"filters" + (props.class)} >
+        <div className={"filters" + (props.className)} >
             <div className="sortFilter">
                 <div className="sortFilterTitle">Sort by</div>
                 <div className="sortFilterList">
