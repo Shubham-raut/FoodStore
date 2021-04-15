@@ -88,7 +88,7 @@ const Login = () => {
 
                            {isLoggingIn ?
                               <>
-                                 <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style={{ position: 'absolute', top: '220px' }}></i>
+                                 <i className="fa fa-spinner fa-pulse fa-3x fa-fw" style={{ position: 'absolute', top: '220px' }}></i>
                               </> :
                               null
                            }
@@ -136,7 +136,7 @@ const Login = () => {
 
                            {isSigningUp ?
                               <>
-                                 <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style={{ position: 'absolute', top: '260px' }}></i>
+                                 <i className="fa fa-spinner fa-pulse fa-3x fa-fw" style={{ position: 'absolute', top: '260px' }}></i>
                               </> :
                               null
                            }

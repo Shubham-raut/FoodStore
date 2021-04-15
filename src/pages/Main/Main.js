@@ -22,7 +22,7 @@ const Main = (props) => {
         <div id="main">
             <div className="filterCollapse"><button onClick={() => setFilterShow(!filterShow)} className="filterCollapseBtn">☰ Filters</button></div>
 
-            <Filters class={filterShow ? ' ftr' : ''} />
+            <Filters className={filterShow ? ' ftr' : ''} />
 
             <div className="mainPage_card_container">
                 {loading ?
@@ -33,11 +33,11 @@ const Main = (props) => {
                                 <RestCard items={items} key={items.restaurant.R.res_id} />
                             ) :
                             <div className='notFound'>
-                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                 <span>No results found</span>
                             </div> :
                         <div className="error">
-                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
                             <span>{error}</span>
                         </div>
                 }

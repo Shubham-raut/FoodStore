@@ -36,11 +36,11 @@ const RestaurentDetails = (props) => {
                         currentRes ?
                             <Reshead /> :
                             <div className='notFound'>
-                                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                 <span>No results found</span>
                             </div> :
                         <div className="error">
-                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
                             <span>{resHeadError}</span>
                         </div>
 
@@ -58,11 +58,11 @@ const RestaurentDetails = (props) => {
                                             <ResMenu item={item} key={index} />
                                         ) :
                                         <div className='notFound'>
-                                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                            <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                             <span>No results found</span>
                                         </div> :
                                     <div className="error">
-                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                        <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
                                         <span>{resMenuError}</span>
                                     </div>
                             }
